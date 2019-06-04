@@ -33,7 +33,7 @@ class Tree:
                     if part[j] == ")":
                         closingCount += 1
                     else:
-                        break;
+                        break
 
                 part = Digiter.toDigited(part[0:len(part) - closingCount])
                 result.words.extend([part])

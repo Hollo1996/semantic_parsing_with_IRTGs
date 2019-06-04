@@ -309,49 +309,49 @@ def basicTernaryNPTail():
                         "[fourlang] f_dep1(merge(f_dep2(merge(\"(r<root> :1 d1<dep1> :2 (d2<dep2>))\", r_dep2(?1))), r_dep1(?2)))\n")
             elif input.dependencies[0].flangType == Fourlang.OneTo_ZeroBack:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :1 (d<dep> :0 (r<root>)))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :1 (d<dep> :0 (r<root>)))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :1 (d<dep> :0 (r<root>)))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :1 (d<dep> :0 (r<root>)))\", r_dep(?1))),?2)\n"
             elif input.dependencies[0].flangType == Fourlang.Zero:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep> :0 (r<root>)))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep> :0 (r<root>)))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep> :0 (r<root>)))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep> :0 (r<root>)))\", r_dep(?1))),?2)\n"
             elif input.dependencies[0].flangType == Fourlang.ZeroFlat:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0_flat (d<dep>))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0_flat (d<dep>))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0_flat (d<dep>))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0_flat (d<dep>))\", r_dep(?1))),?2)\n"
             elif input.dependencies[0].flangType == Fourlang.ZeroCompound:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0_compound (d<dep>))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0_compound (d<dep>))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0_compound (d<dep>))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0_compound (d<dep>))\", r_dep(?1))),?2)\n"
             elif input.dependencies[0].flangType == Fourlang.ZeroTo:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep>))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep>))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep>))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :0 (d<dep>))\", r_dep(?1))),?2)\n"
             elif input.dependencies[0].flangType == Fourlang.UnderTo:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :_ (d<dep>))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :_ (d<dep>))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :_ (d<dep>))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :_ (d<dep>))\", r_dep(?1))),?2)\n"
             elif input.dependencies[0].flangType == Fourlang.TwoTo:
                 if not reverse:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :2 (d<dep>))\", r_dep(?2))),?1)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :2 (d<dep>))\", r_dep(?2))),?1)\n"
                 else:
-                    result += ("[fourlang] merge(f_dep(merge(\"(r<root> :2 (d<dep>))\", r_dep(?1))),?2)\n")
+                    result += "[fourlang] merge(f_dep(merge(\"(r<root> :2 (d<dep>))\", r_dep(?1))),?2)\n"
             else:
                 if not reverse:
-                    result += ("[fourlang] ?1\n")
+                    result += "[fourlang] ?1\n"
                 else:
-                    result += ("[fourlang] ?2\n")
+                    result += "[fourlang] ?2\n"
         else:
             if not reverse:
-                result += ("[fourlang] ?1\n")
+                result += "[fourlang] ?1\n"
             else:
-                result += ("[fourlang] ?2\n")
+                result += "[fourlang] ?2\n"
     return result
 """
 NP( VB( ), NN( ), NNS( ))
@@ -377,7 +377,7 @@ def basicTernaryNPComplete():
 
         place=-1
         for index in range(0,len(input.dependencies)):
-            if ((input.dependencies[index].startWord == input.words[0].word or input.dependencies[index].endWord == input.words[0].word)):
+            if input.dependencies[index].startWord == input.words[0].word or input.dependencies[index].endWord == input.words[0].word:
                 place=index
                 break
 
@@ -386,7 +386,7 @@ def basicTernaryNPComplete():
         else:
             input.dependencies=[]
 
-        if(len(input.dependencies)==0 or input.dependencies[0].depType.Shortest=="root"):
+        if len(input.dependencies)==0 or input.dependencies[0].depType.Shortest== "root":
             print("root")
 
         result+="\n"
